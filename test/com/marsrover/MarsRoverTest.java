@@ -89,11 +89,20 @@ public class MarsRoverTest {
 
 
     @Test
-    public void newPositionOfTheRoverShouldBeOneTwoNorthWhenInitialPositionIsOneThreeNorthWithInstructionMove() {
+    public void newPositionOfTheRoverShouldBeOneThreeNorthWhenInitialPositionIsOneTwoNorthWithInstructionMove() {
         MarsRover rover = new MarsRover(1, 2, 'N');
 
         char instruction = 'M';
 
         assertEquals("1 3 N", rover.newPosition(instruction));
+    }
+
+    @Test
+    public void newPositionOfTheRoverShouldBeFiveThreeEastWhenInitialPositionIsFourThreeEastWithInstructionMove() {
+        MarsRover rover = new MarsRover(4, 3, 'E');
+
+        char instruction = 'M';
+
+        assertEquals("5 3 E", rover.newPosition(instruction));
     }
 }
