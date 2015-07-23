@@ -8,6 +8,8 @@ public class MarsRover {
     private int initialPositionX;
     private int initialPositionY;
     private char initialLocation;
+    char instructions;
+    char finalLocation;
 
     public MarsRover(int initialPositionX, int initialPositionY, char initialLocation) {
 
@@ -16,7 +18,21 @@ public class MarsRover {
         this.initialLocation = initialLocation;
     }
 
-    public String newPosition() {
-        return "0 0 N";
+    public String newPosition(char instructions) {
+        if (instructions == 'L'){
+            finalLocation = rotateLeft();
+            return initialPositionX + " " + initialPositionY + " " + finalLocation;
+        }
+        return null;
+    }
+
+    public char rotateLeft() {
+        if (initialLocation == 'N') {
+            finalLocation = 'W';
+            return finalLocation;
+        }
+        return 0;
     }
 }
+
+
