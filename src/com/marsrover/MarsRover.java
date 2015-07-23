@@ -35,6 +35,10 @@ public class MarsRover {
             finalLocation = 'S';
             return finalLocation;
         }
+        else if(initialLocation == 'S') {
+            finalLocation = 'E';
+            return finalLocation;
+        }
         return 0;
     }
 }
