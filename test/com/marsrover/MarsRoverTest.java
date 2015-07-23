@@ -41,4 +41,13 @@ public class MarsRoverTest {
 
         assertEquals("1 2 E", rover.newPosition(instructions));
     }
+
+    @Test
+    public void newPositionOfTheRoverShouldBeOneTwoNorthWhenInitialPositionIsOneTwoEastWithInstructionLeft() {
+        MarsRover rover = new MarsRover(1, 2, 'E');
+
+        char instructions = 'L';
+
+        assertEquals("1 2 N", rover.newPosition(instructions));
+    }
 }
