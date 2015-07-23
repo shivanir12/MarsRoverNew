@@ -10,81 +10,90 @@ public class MarsRoverTest {
     public void newPositionOfTheRoverShouldBeZeroZeroWestWhenInitialPositionIsZeroZeroNorthWithInstructionLeft() {
         MarsRover rover = new MarsRover(0, 0, 'N');
 
-        char instructions = 'L';
+        char instruction = 'L';
 
-        assertEquals("0 0 W", rover.newPosition(instructions));
+        assertEquals("0 0 W", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoWestWhenInitialPositionIsOneTwoNorthWithInstructionLeft() {
         MarsRover rover = new MarsRover(1, 2, 'N');
 
-        char instructions = 'L';
+        char instruction = 'L';
 
-        assertEquals("1 2 W", rover.newPosition(instructions));
+        assertEquals("1 2 W", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoSouthWhenInitialPositionIsOneTwoWestWithInstructionLeft() {
         MarsRover rover = new MarsRover(1, 2, 'W');
 
-        char instructions = 'L';
+        char instruction = 'L';
 
-        assertEquals("1 2 S", rover.newPosition(instructions));
+        assertEquals("1 2 S", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoSouthWhenInitialPositionIsOneTwoEastWithInstructionLeft() {
         MarsRover rover = new MarsRover(1, 2, 'S');
 
-        char instructions = 'L';
+        char instruction = 'L';
 
-        assertEquals("1 2 E", rover.newPosition(instructions));
+        assertEquals("1 2 E", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoNorthWhenInitialPositionIsOneTwoEastWithInstructionLeft() {
         MarsRover rover = new MarsRover(1, 2, 'E');
 
-        char instructions = 'L';
+        char instruction = 'L';
 
-        assertEquals("1 2 N", rover.newPosition(instructions));
+        assertEquals("1 2 N", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoEastWhenInitialPositionIsOneTwoNorthWithInstructionRight() {
         MarsRover rover = new MarsRover(1, 2, 'N');
 
-        char instructions = 'R';
+        char instruction = 'R';
 
-        assertEquals("1 2 E", rover.newPosition(instructions));
+        assertEquals("1 2 E", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoSouthWhenInitialPositionIsOneTwoEastWithInstructionRight() {
         MarsRover rover = new MarsRover(1, 2, 'E');
 
-        char instructions = 'R';
+        char instruction = 'R';
 
-        assertEquals("1 2 S", rover.newPosition(instructions));
+        assertEquals("1 2 S", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoWestWhenInitialPositionIsOneTwoSouthWithInstructionRight() {
         MarsRover rover = new MarsRover(1, 2, 'S');
 
-        char instructions = 'R';
+        char instruction = 'R';
 
-        assertEquals("1 2 W", rover.newPosition(instructions));
+        assertEquals("1 2 W", rover.newPosition(instruction));
     }
 
     @Test
     public void newPositionOfTheRoverShouldBeOneTwoNorthWhenInitialPositionIsOneTwoWestWithInstructionRight() {
         MarsRover rover = new MarsRover(1, 2, 'W');
 
-        char instructions = 'R';
+        char instruction = 'R';
 
-        assertEquals("1 2 N", rover.newPosition(instructions));
+        assertEquals("1 2 N", rover.newPosition(instruction));
     }
 
+
+    @Test
+    public void newPositionOfTheRoverShouldBeOneTwoNorthWhenInitialPositionIsOneThreeNorthWithInstructionMove() {
+        MarsRover rover = new MarsRover(1, 2, 'N');
+
+        char instruction = 'M';
+
+        assertEquals("1 3 N", rover.newPosition(instruction));
+    }
 }

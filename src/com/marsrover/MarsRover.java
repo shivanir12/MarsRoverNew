@@ -5,45 +5,50 @@ public class MarsRover {
     int lowerLimitY = 0;
     int upperLimitX = 5;
     int upperLimitY = 5;
-    private int initialPositionX;
-    private int initialPositionY;
+    private int positionX;
+    private int positionY;
     private char initialLocation;
-    char instructions;
     char finalLocation;
 
     public MarsRover(int initialPositionX, int initialPositionY, char initialLocation) {
 
-        this.initialPositionX = initialPositionX;
-        this.initialPositionY = initialPositionY;
+        this.positionX = initialPositionX;
+        this.positionY = initialPositionY;
         this.initialLocation = initialLocation;
     }
 
-    public String newPosition(char instructions) {
-        if (instructions == 'L'){
+    public String newPosition(char instruction) {
+        if (instruction == 'L') {
             finalLocation = rotateLeft();
-            return initialPositionX + " " + initialPositionY + " " + finalLocation;
-        }
-        else if(instructions == 'R'){
+            return positionX + " " + positionY + " " + finalLocation;
+        } else if (instruction == 'R') {
             finalLocation = rotateRight();
-            return initialPositionX + " " + initialPositionY + " " + finalLocation;
+            return positionX + " " + positionY + " " + finalLocation;
+        } else if (instruction == 'M') {
+            return moveToPosition();
+        }
+        return null;
+    }
+
+    private String moveToPosition() {
+        if (positionY < upperLimitY && initialLocation == 'N') {
+            positionY++;
+            return positionX + " " + positionY + " " + initialLocation;
         }
         return null;
     }
 
     private char rotateRight() {
-        if(initialLocation == 'N'){
+        if (initialLocation == 'N') {
             finalLocation = 'E';
             return finalLocation;
-        }
-        else if(initialLocation == 'E'){
+        } else if (initialLocation == 'E') {
             finalLocation = 'S';
             return finalLocation;
-        }
-        else if(initialLocation == 'S'){
+        } else if (initialLocation == 'S') {
             finalLocation = 'W';
             return finalLocation;
-        }
-        else if(initialLocation == 'W'){
+        } else if (initialLocation == 'W') {
             finalLocation = 'N';
             return finalLocation;
         }
@@ -54,16 +59,13 @@ public class MarsRover {
         if (initialLocation == 'N') {
             finalLocation = 'W';
             return finalLocation;
-        }
-        else if(initialLocation == 'W') {
+        } else if (initialLocation == 'W') {
             finalLocation = 'S';
             return finalLocation;
-        }
-        else if(initialLocation == 'S') {
+        } else if (initialLocation == 'S') {
             finalLocation = 'E';
             return finalLocation;
-        }
-        else if(initialLocation == 'E') {
+        } else if (initialLocation == 'E') {
             finalLocation = 'N';
             return finalLocation;
         }
