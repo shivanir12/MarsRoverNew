@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project name="MarsRover" default="junit">
+    <target name="compile">
+        <mkdir dir="out"/>
+        <javac srcdir="src" destdir="out" classpath="lib/junit-4.8.2.jar">
+        </javac>
+        <javac srcdir="test" destdir="out" classpath="lib/junit-4.8.2.jar">
+        </javac>
+    </target>
+
+    <target name="junit" depends="compile">
+        <junit haltonfailure=" true" printsummary="true">
+            <classpath path="out" location="lib/junit-4.8.2.jar">
+            </classpath>
+            <test name="com.marsrover.MarsRoverTest">
+            </test>
+        </junit>
+    </target>
+</project>
