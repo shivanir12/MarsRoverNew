@@ -23,7 +23,19 @@ public class MarsRover {
             finalLocation = rotateLeft();
             return initialPositionX + " " + initialPositionY + " " + finalLocation;
         }
+        else if(instructions == 'R'){
+            finalLocation = rotateRight();
+            return initialPositionX + " " + initialPositionY + " " + finalLocation;
+        }
         return null;
+    }
+
+    private char rotateRight() {
+        if(initialLocation == 'N'){
+            finalLocation = 'E';
+            return finalLocation;
+        }
+        return 0;
     }
 
     public char rotateLeft() {
