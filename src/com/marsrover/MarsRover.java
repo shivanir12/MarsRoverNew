@@ -1,5 +1,6 @@
 package com.marsrover;
 
+
 public class MarsRover {
     int lowerLimitX = 0;
     int lowerLimitY = 0;
@@ -41,6 +42,10 @@ public class MarsRover {
         }
         else if (positionY > lowerLimitY && initialLocation == 'S') {
             positionY--;
+            return positionX + " " + positionY + " " + initialLocation;
+        }
+        else if (positionX > lowerLimitX && initialLocation == 'W') {
+            positionX--;
             return positionX + " " + positionY + " " + initialLocation;
         }
         return null;

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class MarsRoverTest {
 
     @Test
@@ -114,4 +115,15 @@ public class MarsRoverTest {
 
         assertEquals("2 1 S", rover.newPosition(instruction));
     }
+
+    @Test
+    public void newPositionOfTheRoverShouldBeZeroTwoWestWhenInitialPositionIsOneTwoWestWithInstruction() {
+        MarsRover rover = new MarsRover(3, 5, 'W');
+
+        char instruction = 'M';
+
+        assertEquals("2 5 W", rover.newPosition(instruction));
+    }
+
+
 }
