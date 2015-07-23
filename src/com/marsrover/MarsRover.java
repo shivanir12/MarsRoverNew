@@ -39,6 +39,10 @@ public class MarsRover {
             positionX++;
             return positionX + " " + positionY + " " + initialLocation;
         }
+        else if (positionY > lowerLimitY && initialLocation == 'S') {
+            positionY--;
+            return positionX + " " + positionY + " " + initialLocation;
+        }
         return null;
     }
 
